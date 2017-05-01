@@ -1,0 +1,33 @@
+DROP TABLE IF EXISTS screening;
+DROP TABLE IF EXISTS tickets;
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS films;
+
+CREATE TABLE customers (
+  id SERIAL8 PRIMARY KEY,
+  name VARCHAR(255),
+  funds VARCHAR(255)
+);
+
+CREATE TABLE films (
+  id SERIAL8 PRIMARY KEY,
+  title VARCHAR(255),
+  price VARCHAR(255)
+);
+
+CREATE TABLE tickets (
+  id SERIAL8 PRIMARY KEY,
+  customer_id INT8 REFERENCES customers(id) ON DELETE CASCADE,
+  film_id INT8 REFERENCES films(id) ON DELETE CASCADE,
+  cinema VARCHAR(255),
+  type VARCHAR(255)
+);
+
+CREATE TABLE screenings (
+  id SERIAL8 PRIMARY KEY,
+  film_time TIME,
+  film_id INT8 REFERENCES films(id) ON DELETE CASCADE
+);
+
+
+
