@@ -1,0 +1,20 @@
+<form action="/pizzas" method="POST">
+
+  <label for="FirstName"> First Name: </label>
+  <input id ="FirstName" name="first_name" type="text"/>
+
+  <label for="LastName"> Last Name: </label>
+  <input id="LastName" name="last_name" type="text"></input>
+
+  <label for="PizzaSelect"> Select your pizza: </label>
+  <select id="PizzaSelect" name="topping">
+    <option value="Margherita"> Margherita </option>
+    <option value="Pepperoni"> Pepperoni </option>
+  </select>
+
+  <label for="quantity"> How many you want? </label>
+  <input min="0" type="number" id="quantity" name="quantity"></input>
+
+  <input type="submit" value="Order Pizza">
+
+</form>
